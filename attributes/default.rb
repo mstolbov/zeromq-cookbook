@@ -17,6 +17,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-default[:zeromq][:src_version] = "2.0.8"
+default[:zeromq][:src_version] = "3.2.2"
 default[:zeromq][:install_dir] = "/opt/zeromq-#{zeromq[:src_version]}"
-default[:zeromq][:src_mirror]  = "http://www.zeromq.org/local--files/area:download/zeromq-#{zeromq[:src_version]}.tar.gz"
+default[:zeromq][:src_mirror]  = "http://download.zeromq.org/zeromq-#{zeromq[:src_version]}.tar.gz"

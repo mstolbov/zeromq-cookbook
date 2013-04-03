@@ -27,6 +27,7 @@ remote_file zeromq_tar_gz do
   source node[:zeromq][:src_mirror]
 end
 
+package "libtool"
 package "uuid-dev" do
   action :upgrade
 end
@@ -35,7 +36,10 @@ bash "install zeromq #{node[:zeromq][:src_version]}" do
   cwd Chef::Config[:file_cache_path]
   code <<-EOH
     tar -zxf #{zeromq_tar_gz}
-    cd zeromq-#{node[:zeromq][:src_version]} && ./configure --prefix=#{node[:zeromq][:install_dir]} && make && make install
+    cd zeromq-#{node[:zeromq][:src_version]}
+    ./configure --prefix=#{node[:zeromq][:install_dir]}
+    make && make install
+    ldconfig
   EOH
   not_if { ::FileTest.exists?("#{node[:zeromq][:install_dir]}/lib/libzmq.so") }
 end
