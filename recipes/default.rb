@@ -25,9 +25,9 @@ zeromq_tar_gz = File.join(Chef::Config[:file_cache_path], "/", "zeromq-#{node[:z
 
 remote_file zeromq_tar_gz do
   source node[:zeromq][:src_mirror]
+  action :create_if_missing
 end
 
-package "libtool"
 package "uuid-dev" do
   action :upgrade
 end
