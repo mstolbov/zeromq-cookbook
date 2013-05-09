@@ -1,37 +1,54 @@
-REQUIREMENTS
-============
+# <a name="title"></a> ZeroMQ cookbook [![Build Status](https://secure.travis-ci.org/mstolbov/zeromq-cookbook.png?branch=master)](http://travis-ci.org/mstolbov/zeromq-cookbook)
 
-Platform
---------
+## <a name="description"></a> Description
 
-Currently tested on Ubuntu 10.10. If you get it working on another platform (or
-it doesn't work on your platform of choice), open an issue.
+Installs [ZeroMQ](http://www.zeromq.org/) on your platform.
 
-Cookbooks
----------
+## <a name="requirements"></a> Requirements
 
-- build-essential
+### <a name="requirements-platform"></a> Platform
 
-ATTRIBUTES
-==========
+The following platforms have been tested with this cookbook, meaning that
+the recipes and LWRPs run on these platforms without error:
+
+* ubuntu (10.04/11.04/12.04/13.04)
+* debian (6.0)
+* centos
+
+Please [report][issues] any additional platforms so they can be added.
+
+### <a name="requirements-cookbooks"></a> Cookbooks
+
+This cookbook depends on the following external cookbooks:
+
+* build-essential
+
+## <a name="attributes"></a> Attributes
 
 All attributes are named under the `zeromq` keyspace. The attributes
 specified in the cookbook are used to setup the default config file.
 
-* `node[:zeromq][:src_version]` - version of zeromq to install
+* `node[:zeromq][:src_version]` -
 * `node[:zeromq][:install_dir]` - location to install zeromq to
 * `node[:zeromq][:src_mirror]` - full URL to download the source from.
 
-RECIPES
-=======
+## <a name="recipes"></a> Recipes
 
-default
--------
+### <a name="recipes-default"></a> default
 
-Installs zeromq and installs it.
+Downloads ZeroMQ from src mirror and installs it.
 
-LICENSE AND AUTHOR
-==================
+## <a name="todo"></a> TODO
+
+* [] check other UNIX platforms
+* [] add support for Windows (when someone request for it)
+
+## <a name="maintainers"></a> Maintainers
+
+* Mihail Stolbov (@mstolbov)
+* Anton Kalyaev (@akalyaev)
+
+### <a name="original-author-and-license"></a> Original author and license
 
 Author:: Thomas Rampelberg (<thomas@saunter.org>)
 
@@ -48,5 +65,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
 
