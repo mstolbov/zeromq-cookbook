@@ -9,7 +9,7 @@ Installs [ZeroMQ](http://www.zeromq.org/) on your platform.
 ### <a name="requirements-platform"></a> Platform
 
 The following platforms have been tested with this cookbook, meaning that
-the recipes and LWRPs run on these platforms without error:
+the recipes run on these platforms without error:
 
 * ubuntu (10.04/11.04/12.04/13.04)
 * debian (6.0)
@@ -28,9 +28,9 @@ This cookbook depends on the following external cookbooks:
 All attributes are named under the `zeromq` keyspace. The attributes
 specified in the cookbook are used to setup the default config file.
 
-* `node[:zeromq][:src_version]` -
+* `node[:zeromq][:src_version]` - version of zeromq to install
 * `node[:zeromq][:install_dir]` - location to install zeromq to
-* `node[:zeromq][:src_mirror]` - full URL to download the source from.
+* `node[:zeromq][:src_mirror]` - full URL to download the source from
 
 ## <a name="recipes"></a> Recipes
 
@@ -40,13 +40,13 @@ Downloads ZeroMQ from src mirror and installs it.
 
 ## <a name="todo"></a> TODO
 
-* [] check other UNIX platforms
-* [] add support for Windows (when someone request for it)
+[] check other UNIX platforms
+[] add support for Windows (when someone request for it)
 
 ## <a name="maintainers"></a> Maintainers
 
-* Mihail Stolbov (@mstolbov)
-* Anton Kalyaev (@akalyaev)
+* [Mihail Stolbov](http://github.com/mstolbov)
+* [Anton Kalyaev](http://github.com/akalyaev)
 
 ### <a name="original-author-and-license"></a> Original author and license
 
