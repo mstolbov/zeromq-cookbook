@@ -40,8 +40,8 @@ Downloads ZeroMQ from src mirror and installs it.
 
 ## <a name="todo"></a> TODO
 
-[] check other UNIX platforms
-[] add support for Windows (when someone request for it)
+- [ ] check other UNIX platforms
+- [ ] add support for Windows (when someone request for it)
 
 ## <a name="maintainers"></a> Maintainers
 
