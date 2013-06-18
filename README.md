@@ -45,7 +45,7 @@ Downloads ZeroMQ from src mirror and installs it.
 
 ## <a name="maintainers"></a> Maintainers
 
-* [Mihail Stolbov](http://github.com/mstolbov)
+* [Mikhail Stolbov](http://github.com/mstolbov)
 * [Anton Kalyaev](http://github.com/akalyaev)
 
 ### <a name="original-author-and-license"></a> Original author and license
