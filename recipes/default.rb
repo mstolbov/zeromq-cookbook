@@ -28,7 +28,7 @@ remote_file zeromq_tar_gz do
   action :create_if_missing
 end
 
-package "uuid-dev" do
+package "uuid-devel" do
   action :upgrade
 end
 
