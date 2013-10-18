@@ -28,7 +28,13 @@ remote_file zeromq_tar_gz do
   action :create_if_missing
 end
 
-package "uuid-devel" do
+if platform_family?("debian")
+  uuid_package = "uuid-dev"
+elsif platform_family?("rhel")
+  uuid_package = "uuid-devel"
+end
+
+package uuid_package do
   action :upgrade
 end
 
