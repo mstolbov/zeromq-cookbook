@@ -1,10 +1,11 @@
 #
-# Cookbook Name:: mongrel2
+# Cookbook Name:: zeromq
 # Recipe:: default
 #
 # Author:: Thomas Rampelberg (<thomas@saunter.org>)
 #
 # Copyright 2011, Thomas Rampelberg
+# Copyright 2014, John Bellone <jbellone@bloomberg.net>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,13 +22,6 @@
 
 include_recipe "build-essential"
 
-zeromq_tar_gz = File.join(Chef::Config[:file_cache_path], "/", "zeromq-#{node[:zeromq][:src_version]}.tar.gz")
-
-remote_file zeromq_tar_gz do
-  source node[:zeromq][:src_mirror]
-  action :create_if_missing
-end
-
 if platform_family?("debian")
   uuid_package = "uuid-dev"
 elsif platform_family?("rhel")
@@ -38,14 +32,9 @@ package uuid_package do
   action :upgrade
 end
 
-bash "install zeromq #{node[:zeromq][:src_version]}" do
-  cwd Chef::Config[:file_cache_path]
-  code <<-EOH
-    tar -zxf #{zeromq_tar_gz}
-    cd zeromq-#{node[:zeromq][:src_version]}
-    ./configure --prefix=#{node[:zeromq][:install_dir]}
-    make && make install
-    ldconfig
-  EOH
-  not_if { ::FileTest.exists?("#{node[:zeromq][:install_dir]}/lib/libzmq.so") }
+ark 'zeromq' do
+  path File.join(node[:zeromq][:install_dir], 'bin')
+  url node[:zeromq][:src_mirror]
+  action [:configure, :install_with_make]
+  not_if { ::File.exists?(File.join(node[:zeromq][:install_dir], 'lib/libzmq.so')) }
 end
