@@ -37,6 +37,7 @@ end
 ark 'zeromq' do
   prefix_root node[:zeromq][:install_dir]
   url node[:zeromq][:src_mirror]
+  checksum node[:zeromq][:src_checksum]
   autoconf_opts ["--prefix=#{node[:zeromq][:install_dir]}"]
   action :install_with_make
   not_if { ::File.exists?(File.join(node[:zeromq][:install_dir], 'lib/libzmq.so')) }

@@ -29,6 +29,7 @@ suites:
     attributes:
       zeromq:
         src_version: "2.2.0"
+        src_checksum: "43904aeb9ea6844f72ca02e4e53bf1d481a1a0264e64979da761464e88604637"
         install_dir: "/usr/local"
         src_mirror: "http://download.zeromq.org/zeromq-2.2.0.tar.gz"
 
