@@ -3,7 +3,7 @@
 # Recipe:: default
 #
 # Author:: Thomas Rampelberg (<thomas@saunter.org>)
-# Author:: John Bellone (<jbellone@bloombeg.net>)
+# Author:: John Bellone (<jbellone@bloomberg.net>)
 #
 # Copyright 2011, Thomas Rampelberg
 # Copyright 2014, John Bellone

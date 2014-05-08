@@ -53,8 +53,6 @@ Downloads ZeroMQ from src mirror and installs it.
 Author:: Thomas Rampelberg (<thomas@saunter.org>)
 
 Copyright 2011, Thomas Rampelberg
-Copyright 2014, John Bellone
-Copyright 2014, Bloomberg Finance L.P.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
