@@ -1,6 +1,7 @@
 #!/usr/bin/env rake
-
 require 'foodcritic'
+require 'rake'
+require 'rspec/core/rake_task'
 require 'rake/testtask'
 
 # FC041 is excluded because we want to preserve the official RVM installation
@@ -17,3 +18,7 @@ rescue LoadError
 end
 
 task :default => :foodcritic
+
+RSpec::Core::RakeTask.new(:spec) do |t|
+  t.pattern = 'test/integration/serverspec/**/*_spec.rb'
+end

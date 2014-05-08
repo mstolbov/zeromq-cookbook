@@ -3,9 +3,11 @@
 # Recipe:: default
 #
 # Author:: Thomas Rampelberg (<thomas@saunter.org>)
+# Author:: John Bellone (<jbellone@bloombeg.net>)
 #
 # Copyright 2011, Thomas Rampelberg
-# Copyright 2014, John Bellone <jbellone@bloomberg.net>
+# Copyright 2014, John Bellone
+# Copyright 2014, Bloomberg Finance L.P.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -33,8 +35,9 @@ package uuid_package do
 end
 
 ark 'zeromq' do
-  path File.join(node[:zeromq][:install_dir], 'bin')
+  prefix_root node[:zeromq][:install_dir]
   url node[:zeromq][:src_mirror]
-  action [:configure, :install_with_make]
+  autoconf_opts ["--prefix=#{node[:zeromq][:install_dir]}"]
+  action :install_with_make
   not_if { ::File.exists?(File.join(node[:zeromq][:install_dir], 'lib/libzmq.so')) }
 end
