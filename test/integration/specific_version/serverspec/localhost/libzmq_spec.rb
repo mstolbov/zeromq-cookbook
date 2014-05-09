@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-%w(libzmq.so libzmq.so.3).each do |lib|
+%w(libzmq.so libzmq.so.2).each do |lib|
   describe file("/usr/local/lib/#{lib}") do
-    it { should be_linked_to('libzmq.so.3.0.0') }
+    it { should be_linked_to('libzmq.so.2.2.0') }
   end
 end
 
