@@ -35,6 +35,7 @@ package uuid_package do
 end
 
 ark 'zeromq' do
+  version node[:zeromq][:src_version]
   prefix_root node[:zeromq][:install_dir]
   url node[:zeromq][:src_mirror]
   checksum node[:zeromq][:src_checksum]

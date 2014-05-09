@@ -31,8 +31,7 @@ suites:
       - recipe[zeromq-cookbook::default]
     attributes:
       zeromq:
-        src_version: "2.2.0"
-        src_checksum: "43904aeb9ea6844f72ca02e4e53bf1d481a1a0264e64979da761464e88604637"
+        src_version: "3.2.4"
+        src_checksum: "df96a141c85b65c2cb6c0db22223126623a09eecbfccb7f74400f3f938742f59"
         install_dir: "/usr/local"
-        src_mirror: "http://download.zeromq.org/zeromq-2.2.0.tar.gz"
 
