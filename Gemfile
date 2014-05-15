@@ -4,7 +4,8 @@ gem 'rake'
 gem 'foodcritic'
 
 group :integration do
-  gem 'berkshelf', '~> 1.3.1'
-  gem 'test-kitchen', '~> 1.0.0.alpha.5'
-  gem 'kitchen-vagrant', '~> 0.9.0'
+  gem 'berkshelf', '~> 3.1'
+  gem 'test-kitchen', '~> 1.2'
+  gem 'serverspec'
+  gem 'kitchen-vagrant'
 end

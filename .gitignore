@@ -2,3 +2,6 @@ Gemfile.lock
 Berksfile.lock
 .vagrant
 .kitchen/
+.bundle/
+bin/
+.kitchen.local.yml
